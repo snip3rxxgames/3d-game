@@ -25,6 +25,14 @@ const material = new THREE.MeshStandardMaterial({ color: 0x00ff88 });
 const player = new THREE.Mesh(geometry, material);
 scene.add(player);
 
+// Ground plane
+const groundGeo = new THREE.PlaneGeometry(100, 100);
+const groundMat = new THREE.MeshStandardMaterial({ color: 0x113322 });
+const ground = new THREE.Mesh(groundGeo, groundMat);
+ground.rotation.x = -Math.PI / 2; // Rotate to be flat
+scene.add(ground);
+
+
 // RESIZE HANDLING
 window.addEventListener('resize', () => {
   camera.aspect = window.innerWidth / window.innerHeight;
