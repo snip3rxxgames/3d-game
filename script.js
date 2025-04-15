@@ -1,3 +1,18 @@
+const keys = {
+  w: false,
+  a: false,
+  s: false,
+  d: false
+};
+
+document.addEventListener('keydown', (e) => {
+  if (keys[e.key.toLowerCase()] !== undefined) keys[e.key.toLowerCase()] = true;
+});
+
+document.addEventListener('keyup', (e) => {
+  if (keys[e.key.toLowerCase()] !== undefined) keys[e.key.toLowerCase()] = false;
+});
+
 import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js';
 
 // SCENE
